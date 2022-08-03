@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+/* fonts */
+@import "./assets/css/fonts.scss";
+
+/* reset */
+@import "./assets/css/reset.scss";
+
+/* common */
+@import "./assets/css/common.scss";
+
+//header(_을 안써도 연동됨- scss의 기능)
+@import "./assets/css/header.scss";
+
+//footer(_을 안써도 연동됨- scss의 기능)
+@import "./assets/css/footer.scss";
+
+//main(_을 안써도 연동됨- scss의 기능)
+@import "./assets/css/main.scss";
+
+//about(_을 안써도 연동됨- scss의 기능)
+@import "./assets/css/about.scss";
+
+//port(_을 안써도 연동됨- scss의 기능)
+@import "./assets/css/port.scss";
+
+//contact(_을 안써도 연동됨- scss의 기능)
+@import "./assets/css/contact.scss";
+
+//loading(_을 안써도 연동됨- scss의 기능)
+@import "./assets/css/loading.scss";
+
+@import "./assets/css/refer.scss";
+
+@import "./assets/css/youtube.scss";
+
+@import "./assets/css/movie.scss";
