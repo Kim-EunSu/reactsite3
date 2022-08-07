@@ -3,7 +3,6 @@ import Header from "../layout/Header";
 import Footer from "../layout/Footer";
 import Contents from "../layout/Contents";
 import ReferCont from "../includes/ReferCont";
-import Loading from "../layout/Loading";
 import Title from "../layout/Title";
 import Contact from "../layout/Contact";
 import axios from "axios";
@@ -26,7 +25,6 @@ import axios from "axios";
 
 class Refer extends React.Component {
   state = {
-    isLoading: true,
     refers: [],
   };
 
@@ -40,51 +38,43 @@ class Refer extends React.Component {
     );
     // console.log(html);
     //로딩소스를 가져와서 완료되면 끝나야되기 때문에 isLoading: false를 써야함
-    this.setState({ refers: htmlRefer, isLoading: false });
+    this.setState({ refers: htmlRefer });
   };
 
-  // 불러올때 setTimeout을 검
+  // 클래스일때는 componentDidMount가 있어야함!!
   componentDidMount() {
-    setTimeout(() => {
-      this.getRefers();
-    }, 1000);
+    this.getRefers();
   }
 
   render() {
-    const { isLoading, refers } = this.state;
+    const { refers } = this.state;
 
     return (
       <>
-        {isLoading ? (
-          <Loading />
-        ) : (
-          <>
-            <Header />
-            <Contents>
-              <Title title={["Reference", "book"]} />
-              <section className="refer__cont">
-                <div className="container">
-                  <div className="refer__inner">
-                    <h2>html</h2>
-                    <div className="refer__list">
-                      {refers.map((refer) => (
-                        <ReferCont
-                          key={refer.id}
-                          id={refer.id}
-                          title={refer.title}
-                          desc={refer.desc}
-                          use={refer.use}
-                        />
-                      ))}
-                    </div>
-                  </div>
+        <Header />
+        <Contents>
+          <Title title={["Reference", "book"]} />
+          <section className="refer__cont">
+            <div className="container">
+              <div className="refer__inner">
+                <h2>html</h2>
+                <div className="refer__list">
+                  {refers.map((refer) => (
+                    <ReferCont
+                      key={refer.id}
+                      id={refer.id}
+                      title={refer.title}
+                      desc={refer.desc}
+                      use={refer.use}
+                    />
+                  ))}
                 </div>
-              </section>
-              <Contact />
-            </Contents>
-            <Footer />
-          </>
-        )}
+              </div>
+            </div>
+          </section>
+          <Contact />
+        </Contents>
+        <Footer />
       </>
     );
   }

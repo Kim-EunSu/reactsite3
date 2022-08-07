@@ -5,6 +5,7 @@
   ul {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 
     li {
       flex: 1 1 23%;
@@ -67,6 +68,15 @@
     &:active {
       opacity: 0.7;
     }
+  }
+}
+
+.movie__list {
+  p {
+    color: #fff;
+    margin: 0 1%;
+    font-size: 2vw;
+    font-family: var(--subKor_font);
   }
 }
 

@@ -3,7 +3,6 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Main from "./components/pages/Main";
 import About from "./components/pages/About";
-import Youtube from "./components/pages/Youtube";
 import Movie from "./components/pages/Movie";
 import Portfolio from "./components/pages/Portfolio";
 import Refer from "./components/pages/Refer";
@@ -15,7 +14,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/about" element={<About />} />
-        <Route path="/youtube" element={<Youtube />} />
         <Route path="/movie" element={<Movie />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/reference" element={<Refer />} />

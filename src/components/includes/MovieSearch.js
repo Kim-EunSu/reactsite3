@@ -1,8 +1,8 @@
 import React, { useRef } from "react";
-// useRef는 레퍼런스 객체를 반환
+// 본질적으로 useRef는 .current 프로퍼티에 변경 가능한 값을 담고 있는 “상자”
 
 function MovieSearch({ onSearch }) {
-  const inputRef = useRef();
+  const inputRef = useRef(); //useRef를 호출해서 inputRef에 ref객체 저장
 
   const handleSearch = () => {
     const value = inputRef.current.value;
@@ -13,6 +13,8 @@ function MovieSearch({ onSearch }) {
     handleSearch();
   };
 
+  // onKeyPress는 키보드에서 키를 눌렀을 때 발생하는 이벤트 헨들러
+  // 키보드를 누르고 있는 동안에도 이벤트 발생
   const onKeyPress = (event) => {
     if (event.key === "Enter") {
       handleSearch();

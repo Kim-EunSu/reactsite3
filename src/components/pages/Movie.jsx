@@ -1,14 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../layout/Header";
-import Footer from "../layout/Footer";
 import Contents from "../layout/Contents";
 import Title from "../layout/Title";
-import Contact from "../layout/Contact";
-import MovieList from "../includes/MovieList";
 import MovieSearch from "../includes/MovieSearch";
+import MovieList from "../includes/MovieList";
+import Contact from "../layout/Contact";
+import Footer from "../layout/Footer";
 
+// search부분은 get방식으로 데이터를 가져와서  setMovies안에 데이터값을 넣어줌
 function Movie() {
-  const [movies, setMovies] = useState([]);
+  const [movies, SetMovies] = useState([]);
 
   const search = (query) => {
     let requestOptions = {
@@ -22,8 +23,7 @@ function Movie() {
     )
       .then((response) => response.json())
       .then((result) => {
-        setMovies(result.results);
-        //데이터가 불러와지는지
+        SetMovies(result.results);
       })
       .catch((error) => console.log("error", error));
   };
@@ -40,9 +40,7 @@ function Movie() {
     )
       .then((response) => response.json())
       .then((result) => {
-        setMovies(result.results);
-        // 데이터가 불러와지는지
-        // console.log(result.results);
+        SetMovies(result.results);
       })
       .catch((error) => console.log("error", error));
   }, []);
@@ -52,14 +50,14 @@ function Movie() {
       <Header />
       <Contents>
         <Title title={["Movie", "reference"]} />
-        <section className="movie__cont">
+        <div className="movie__cont">
           <div className="container">
             <div className="movie__inner">
               <MovieSearch onSearch={search} />
               <MovieList movies={movies} />
             </div>
           </div>
-        </section>
+        </div>
         <Contact />
       </Contents>
       <Footer />

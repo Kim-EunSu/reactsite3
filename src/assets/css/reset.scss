@@ -3,9 +3,9 @@
 // 변수 설정
 :root {
   --white: #fff;
-  --black: #000;
-  --dark_bg: #000;
-  --dark_border: #2e2e30;
+  --black: #ef233c;
+  --dark_bg: #ef233c;
+  --dark_border: #fff;
   --light_bg: #f0eeeb;
   --light_border: #dad8d1;
 
@@ -13,6 +13,10 @@
   --sub_font: "Rajdhani";
   --kor_font: "ChosunNm";
   --subKor_font: "SCoreDream";
+}
+
+input::placeholder {
+  color: #ffff;
 }
 
 // border-box 초기화
@@ -60,6 +64,9 @@ figure,
 figcaption {
   margin: 0;
   padding: 0;
+}
+li {
+  list-style: none;
 }
 
 // 폰트 초기화
