@@ -22,7 +22,6 @@ import axios from "axios";
 // 클래스형
 //변수는 :데이터 저장하는것 (숫자, 문자, booleaan, 객체, 배열, 함수, null, undefinded 저장 - 데이터타입: 자료형)
 //변수: 지역변수 + 전역변수 + 매개변수 -- > 내부함수 --> 클로저(지역함수+전역함수)
-
 class Refer extends React.Component {
   state = {
     refers: [],

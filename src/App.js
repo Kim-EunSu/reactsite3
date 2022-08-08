@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Main from "./components/pages/Main";
 import About from "./components/pages/About";
 import Movie from "./components/pages/Movie";
+import Youtube from "./components/pages/Youtube";
 import Portfolio from "./components/pages/Portfolio";
 import Refer from "./components/pages/Refer";
 import Contact from "./components/pages/Contact";
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<Main />} />
         <Route path="/about" element={<About />} />
         <Route path="/movie" element={<Movie />} />
+        <Route path="/youtube" element={<Youtube />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/reference" element={<Refer />} />
         <Route path="/contact" element={<Contact />} />
